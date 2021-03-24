@@ -49,9 +49,12 @@ const button = document.querySelector('button');
 let headline = document.querySelector('h2');
 let imageDiv = document.querySelector('img');
 let description = document.getElementById('description');
+
+let svgImg = document.querySelector('.svgImg');
+console.log(svgImg)
 let divIndex =0;
 
-console.log(data[0]);
+
 
  imageDiv.src = data[divIndex].content;
  headline.textContent = data[divIndex].headline;
@@ -64,9 +67,10 @@ console.log(description);
 let ovals = document.querySelectorAll('use');
 let main =document.getElementById('path15_fill');
 ovals.forEach(oval=>{ 
-oval.classList.toggle('blink'); 
+oval.classList.add('blink'); 
 })
 
+svgImg.classList.add('scale');
 
 
 
@@ -74,28 +78,21 @@ card.addEventListener('click', function(){
     card.classList.toggle('is-flipped');
     button.removeAttribute('disabled');
     button.style.backgroundColor="rgb(247,147, 26)";
-    main.style.fill= 'teal';
-    divIndex++;
-    imageDiv.src = data[divIndex].content;
-    headline.textContent = data[divIndex].headline;
-    description.textContent = data[divIndex].answer;
+   
 })
 
 
 button.addEventListener('click', function(){
     
+    button.setAttribute('disabled', "");
+    button.style.backgroundColor="rgb(202,202,202)";
     divIndex++;
     imageDiv.src = data[divIndex].content;
     headline.textContent = data[divIndex].headline;
     description.textContent = data[divIndex].answer;
     
-    card.classList.toggle('is-flipped');
-    button.setAttribute('disabled', "");
-    button.style.backgroundColor="rgb(202,202,202)";
-   
 
 })
-
 
 
 /*
