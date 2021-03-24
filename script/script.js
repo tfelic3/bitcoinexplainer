@@ -74,16 +74,27 @@ svgImg.classList.add('scale');
 
 
 
+
+
 card.addEventListener('click', function(){
     card.classList.toggle('is-flipped');
     button.removeAttribute('disabled');
     button.style.backgroundColor="rgb(247,147, 26)";
+    
    
 })
 
 
 button.addEventListener('click', function(){
-    
+
+if (divIndex === data.length-1){
+    alert("You've reached the end");
+}
+    card.classList.toggle('is-flipped');
+
+    console.log(card.classList);
+
+ 
     button.setAttribute('disabled', "");
     button.style.backgroundColor="rgb(202,202,202)";
     divIndex++;
