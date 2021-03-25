@@ -4,33 +4,30 @@ const data = [
 
     { headline: "What is Bitcoin?",
     content: 'img/bitcoin1.jpg',
-answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+answer: "Bitcoin is a completely digital currency created in 2009 by an anonymous programmer using the alias Satoshi Nakamoto. Nakamoto proposed an open-source ‘peer-to-peer payment system with no central authority or banks. Each Bitcoin is stored in a digital wallet on a computer or smartphone."
     },
 
     { headline: "How does Bitcoin work?",
     content: 'img/bitcoin4.jpg',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    answer: 'The Bitcoin network relies on a shared public space where balances and transactions are recorded on a database called a blockchain.'
         },
 
-    { headline: "Where can I buy Bitcoin and what can I purchase?",
+    { headline: "Where can I buy Bitcoin and what is the value?",
     content: 'img/bitcoin3.jpg',
-answer: "'Bitcoin exchanges' allow people to buy or sell bitcoins using different currencies. Coinbase is a leading exchange."
+answer: "You can acquire bitcoin by purchasing coins through 'Bitcoin exchanges.' These exchanges allow people to buy or sell bitcoins using different currencies. Bitcoins can be mined using a computer algorithm. Bitcoin prices are volatile. They are determined by the bidding on Bitcoin exchanges."
     },
 
-    { headline: "What is the value of Bitcoin?",
+    { headline: "What can you purchase with Bitcoin?",
     content: 'img/bitcoin6.jpg',
     answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
 
-    { headline: "Is Bitcoin safe?",
+    { headline: "Is Bitcoin secure?/Bitcoin backlash?",
     content: 'img/bitcoin2.jpg',
     answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
 
-            { headline: "The future of Bitcoin",
-            content: 'img/bitcoin7.jpg',
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                },
+        
 
 ]
 
@@ -87,65 +84,27 @@ card.addEventListener('click', function(){
 
 button.addEventListener('click', function(){
 
-if (divIndex === data.length-1){
-    alert("You've reached the end");
-}
+
+
+
     card.classList.toggle('is-flipped');
-
-    console.log(card.classList);
-
- 
     button.setAttribute('disabled', "");
     button.style.backgroundColor="rgb(202,202,202)";
     divIndex++;
+    
     imageDiv.src = data[divIndex].content;
     headline.textContent = data[divIndex].headline;
     description.textContent = data[divIndex].answer;
     
 
-})
 
-
-/*
-let divIndex =0;
-
-let main = document.querySelector('main');
-let h2Text = document.querySelector('h2');
-let img = document.querySelector('img');
-
-let svg = document.querySelector('svg');
-console.log(svg);
-
-let pText = document.querySelector('p');
-let button = document.querySelector('button');
-
-h2Text.textContent= data[divIndex].headline;
-img.src = data[divIndex].content;
-
-pText.textContent = data[divIndex].answer;
-
-
-button.addEventListener('click', function (){
-    divIndex++;
-    h2Text.textContent= data[divIndex].headline;
-    pText.textContent = data[divIndex].answer;
-   console.log(divIndex);
-   
- 
+    if (divIndex === data.length){
+        alert("You've reached the end");
+    }
+       
+    
 
 })
-
-*/
-
-
-
-
-
-
-
-
-
-
 
 
 
