@@ -4,7 +4,7 @@ const data = [
     content: "img/bitcoin1.jpg",
     caption: "Getty Images",
     answer:
-      "Bitcoin is a decentralized electric form of currency created in 2009 by an unidentified programmer or group. The currency is not in the physical world. Transactions using the digital currency are anonymous and do not rely on third parties to process payments.",
+      "Bitcoin is a decentralized electronic form of currency created in 2009 by an unidentified programmer or group. The currency is not in the physical world. Transactions using the digital currency are anonymous and do not rely on third parties to process payments.",
     buttonOptions: ["Who invented Bitcoin?", "What is cryptocurrency?"],
   },
 
