@@ -3,6 +3,7 @@
   --secondary: #FE4880;
   --dark: #212121;
   --light: #F3F3F3;
+  --paragraphBackground:  #b6b3b3;
 }
 
 * {
@@ -21,16 +22,17 @@ body {
   margin: 100px auto 2em;
 
   width: 500px;
-  height: 600px;
+  height: 650px;
   perspective: 1000px;
 }
 
 .card__inner {
   width: 100%;
   height: 100%;
+ 
   transition: transform 1s;
   transform-style: preserve-3d;
-  cursor: pointer;
+  
   position: relative;
 }
 
@@ -49,7 +51,7 @@ body {
   height: 100%;
   transition: transform 1s;
   transform-style: preserve-3d;
-  cursor: pointer;
+  
   position: relative;
 
 }
@@ -67,7 +69,7 @@ body {
 }
 
 .card__face--front {
- 
+ cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,6 +91,13 @@ body {
 .card__content{
   width: 100%;
   height: 100%;
+}
+
+#description{
+  background-color: var(--paragraphBackground);
+  border-radius: 16px;
+  width: 450px;
+  margin: 0 auto;
 }
 
 .card__header:after{
@@ -136,12 +145,32 @@ margin-right: .5em;
    font-size: 1em;
  }
 
+ span{
+   color:red;
+   width: 10px;
+   height: 10px;
+ }
+
 
 
 .imageCaption{
   font-size: 12px;
 }
 
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  display: block;
+  border-radius: 50%;
+}
+
+
+.questionDiv{
+  display: flex;
+}
 
 
 
