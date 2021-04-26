@@ -142,7 +142,7 @@ p{
 
 
 .nextQuestionButton, .previousButton{
-   background-color: var(--secondary);
+   background-color: rgb(247,147, 26);
    color: white;
    width: 200px;
    margin-top: .5em;
@@ -154,6 +154,7 @@ margin-right: .5em;
    font-size: 10px;
    border-radius: 20px;
    font-size: 1em;
+   
  }
 
  .cardHeadline{

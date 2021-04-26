@@ -107,7 +107,16 @@ card.addEventListener("click", function () {
 
 
 
-
+previousButton.addEventListener('click', function(){
+  divIndex-=1;
+  console.log(divIndex)
+  
+   
+  
+  
+  
+  
+    })
 
 
 
@@ -149,14 +158,7 @@ imageCaption.textContent = data[divIndex].caption;
 });
 
 
-previousButton.addEventListener('click', function(){
 
-
-
-
-
-
-  })
 
 
      
