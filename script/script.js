@@ -9,31 +9,41 @@ const data = [
 
   {
     cardHeadline: "Where do you buy Bitcoin?",
-    content: "img/bitcoin4.jpg",
-    caption: '',
+    content: "img/coinbase.jpg",
+    caption: 'Credit: Coinbase/CNN',
     answer:
       "You purchase Bitcoin on “bitcoin exchanges,” such as Coinbase, Bitstamp and Bitfinex. You keep the “coins” in a digital wallet, which some people access through an app. If you decide you’d like something that bends and can go in a billfold, well, apps like Coinbase allow you to convert your digital currency into US dollars and transfer them back to your bank account, where you can withdraw them from an ATM.",
   },
 
   {
-    cardHeadline: "3.	What’s Bitcoin worth?",
-    content: "img/bitcoin3.jpg",
+    cardHeadline: "What’s Bitcoin worth?",
+    content: "img/bitcoinworth.jpg",
+    caption: 'Credit: CNN',
     answer:
       "Bitcoin’s value changes all the time because its supply is limited, and demand for it changes constantly, sorta like stocks. According to Investopedia, one Bitcoin was worth 2/25 or less than one-tenth of a penny when it started trading in 2009. It jumped to a whopping 8 cents a year later. By April 2021, one Bitcoin rose above $64,000.",
   },
 
   {
-    cardHeadline: "What can I buy with Bitcoin?",
-    content: "img/bitcoin6.jpg",
+    cardHeadline: "Is there a central bank backing Bitcoin?",
+    content: "video/bitcointheft.mp4",
+    caption: 'Credit: KUTV/Brandon Larsen/CNN',
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Nope. Also, it’s not backed by a physical commodity like gold. And nothing protects your “wallet”, the way the Federal Deposit Insurance Corporation (FDIC) insures your deposit in a bank.",
   },
 
   {
-    headline: "Is anyone regulating Bitcoin or cryptocurrency?",
-    content: "img/bitcoin2.jpg",
+    cardHeadline: "What can I buy with Bitcoin?",
+    content: "img/bitcoinpurchase.jpg",
+    caption: 'Credit: CNN',
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "You can shop with Bitcoin. Tesla is one company that accepts Bitcoin as a form of payment. Other companies include Overstock.com, Whole Foods and Home Depot. However, most people acquire bitcoin as an investment. They’re not buying it to purchase cars or plumbing supplies at Home Depot. They own bitcoin because they’re betting it will rise in value.",
+  },
+  {
+    cardHeadline: "What is “mining bitcoin”?",
+    content: "img/bitcoinmining.jpg",
+    caption: 'Credit: CNN',
+    answer:
+      "Even though it’s not a metal coin, a new bitcoin (remember, it’s digital) can only enter circulation if someone creates it by solving extraordinarily difficult math equations. That’s called “mining”. Yes, doing Sheldon-level math can generate a bitcoin. So, a “miner” can earn cryptocurrency without having to buy it with traditional currency. But all that mining requires significant computer power and electricity, and electricity is used every time digital currency is bought or sold, leaving behind a hefty carbon footprint.",
   },
 ];
 
@@ -41,15 +51,24 @@ const card = document.querySelector(".card__inner");
 
 const button = document.querySelector("button");
 
-const headline = document.querySelector(".cardHeadline");
-console.log(headline);
+const cardHeadline = document.querySelector(".cardHeadline");
+
+
+
 const imageDiv = document.querySelector("img");
+const videoDiv = document.querySelector('.videoDom');
 const description = document.getElementById("description");
 const imageCaption = document.querySelector(".imageCaption");
+const cardBack = document.querySelector('.card__content');
+
+
 
 let svgImg = document.querySelector(".svgImg");
 
 let nextQuestionButton = document.querySelector('.nextQuestionButton');
+const previousButton = document.querySelector('.previousButton');
+
+
 
 
 
@@ -65,8 +84,10 @@ addedQuestions.forEach(question=>{
 let divIndex = 0;
 
 imageDiv.src = data[divIndex].content;
+
+
 imageCaption.textContent = data[divIndex].caption;
-headline.textContent = data[divIndex].cardHeadline;
+cardHeadline.textContent = data[divIndex].cardHeadline;
 description.textContent = data[divIndex].answer;
 nextQuestionButton.textContent = data[divIndex+=1].cardHeadline;
 
@@ -76,39 +97,73 @@ svgImg.classList.add("scale");
 
 card.addEventListener("click", function () {
  
-  card.classList.toggle("is-flipped");
+  
+  card.classList.add("is-flipped");
 
-  if (card.getAttribute("class") === "card__inner is-flipped") {
+
  
-
-  }
 });
+
+
+
+
+
+
+
+
 
 nextQuestionButton.addEventListener('click', function(){
 
- setTimeout(
-    function(){  
-        
-        
-     
-        imageDiv.src = data[divIndex].content;
-        headline.textContent = data[divIndex].headline;
+cardBack.style.animation = 'fadein 2s'
+        imageDiv.src= data[divIndex].content;
+       
+        if(data[divIndex].content.includes('mp4')){
+          videoDiv.src = data[divIndex].content;
+         videoDiv.style.display = 'block';
+         imageCaption.style.display ='none';
+
+        } else{
+          videoDiv.style.display = 'none';
+          imageCaption.style.display ='block';
+          videoDiv.pause();
+
+        }
+       
+        cardHeadline.textContent = data[divIndex].cardHeadline;
+imageCaption.textContent = data[divIndex].caption;
         description.textContent = data[divIndex].answer;
         nextQuestionButton.textContent = data[divIndex+=1].cardHeadline;
-     
 
-        console.log(card);
-    
+        if(divIndex === 5){
+          nextQuestionButton.textContent = "Restart";
+          divIndex =0;
+        
+        }
+        
+        
+        setTimeout(
+          function(){
+            cardBack.removeAttribute('style');
+          }, 3000
+        )
+});
+
+
+previousButton.addEventListener('click', function(){
+
+
+
+
+
+
+  })
+
+
+     
+        
+  
+        
+  
         
     
-    
-    }, 1000) 
 
-
-    
-
-}
-
-
-
-);

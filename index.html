@@ -5,12 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Bitcoin</title>
 	<link rel="stylesheet" href="css/style.css" />
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="card">
 		<div class="card__inner">
 			<div class="card__face card__face--front">
-        <h2 class='cardHeadline'>What is Bitcoin?</h2>
+        <h2>What is Bitcoin?</h2>
         <div class ="svgImg">
         <svg width="503" height="503" viewBox="0 0 503 503" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <title>Ver 3 get strated illustration</title>
@@ -181,7 +185,10 @@
             
 						<img src=" " alt="" class="pp" />
             <p class="imageCaption"> </p>
-            <h2 class='cardHeadline'>What is Bitcoin?</h2>
+            <video class="videoDom" controls></video>
+            <div class = 'headlineDiv'>
+            <h3 class='cardHeadline'></h3>
+          </div>
 						
 					</div>
 					<div class="card__body">
@@ -192,14 +199,17 @@
        <div class= 'additionalQuestionsDiv'>
 
        </div>
-
+       <div class= 'buttonDiv'>
+       <button class="previousButton">Previous</button> 
        <button class="nextQuestionButton"></button>
+      </div>
       </div>
       
 			</div>
 		</div>
 	</div>
   <p class="directions"> Click on card to flip</p>
+ 
 
 	<script src="script/script.js"></script>
 </body>
