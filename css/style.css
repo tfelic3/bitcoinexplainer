@@ -154,8 +154,10 @@ margin-right: .5em;
    font-size: 10px;
    border-radius: 20px;
    font-size: 1em;
-   
  }
+
+
+ 
 
  .previousButton{
    display: none;
@@ -169,7 +171,9 @@ margin-right: .5em;
  }
 
 
-
+.credit{
+  text-align: center;
+}
  span{
    color:red;
    width: 10px;
