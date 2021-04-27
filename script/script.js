@@ -19,6 +19,15 @@ const data = [{
   caption: 'Credit: CNN',
   answer: "Bitcoin’s value changes all the time because its supply is limited, and demand for it changes constantly, sorta like stocks. According to Investopedia, one Bitcoin was worth 2/25 or less than one-tenth of a penny when it started trading in 2009. It jumped to a whopping 8 cents a year later. By April 2021, one Bitcoin rose above $64,000.",
 },
+{
+  cardHeadline: "Is there a central bank backing Bitcoin?",
+  content: "video/bitcointheft.mp4",
+  subhead: "You’re kinda on your own",
+  caption: 'Credit: KUTV/Brandon Larsen/CNN',
+  answer:
+    "Nope. Also, it’s not backed by a physical commodity like gold. And nothing protects your “wallet”, the way the Federal Deposit Insurance Corporation (FDIC) insures your deposit in a bank.",
+
+},
 
 {
   cardHeadline: "What can I buy with Bitcoin?",
@@ -105,6 +114,12 @@ previousButton.addEventListener('click', function() {
 
 })
 
+
+if(divIndex ==0){
+  previousButton.style.display ='none';
+}
+
+console.log(divIndex);
 nextQuestionButton.addEventListener('click', function() {
 
     divIndex += 1;
@@ -112,10 +127,15 @@ nextQuestionButton.addEventListener('click', function() {
     //console.log('previous index ', previousIndex);
     //console.log('button index ', buttonIndex - 1)
     //console.log('next divIndex ', divIndex)
+    console.log(divIndex);
 
-    if (divIndex === 7) {
-      location.reload();
+    if (divIndex > 6) {
+     
+      previousButton.style.display ='none';
       divIndex = 0;
+      
+      nextQuestionButton.textContent = data[divIndex + 1].cardHeadline;
+     
 
     }
 
@@ -139,10 +159,10 @@ nextQuestionButton.addEventListener('click', function() {
     if (data[divIndex].content.includes('mp4')) {
         videoDiv.src = data[divIndex].content;
         videoDiv.style.display = 'block';
-        imageCaption.style.display = 'none';
+        
     } else {
         videoDiv.style.display = 'none';
-        imageCaption.style.display = 'block';
+       
         videoDiv.pause();
     }
 
