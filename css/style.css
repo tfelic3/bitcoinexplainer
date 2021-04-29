@@ -106,6 +106,7 @@ body {
   border-radius: 16px;
   width: 450px;
   margin: 0 auto;
+  line-height: 1.7;
   
 }
 
@@ -174,7 +175,7 @@ p{
  }
 
 
-.credit{
+.storyCredit{
   text-align: center;
   color: rgb(220,220,220);
   font-size: 14;
@@ -220,6 +221,95 @@ button:hover{
 color: white;
 }
 
+
+.subHeadline{
+  color: orange;
+  font-size: 1.5em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+
+@media screen and (max-width: 375px) {
+  .card{
+
+    margin: 100px auto .5em;
+
+    width: 350px;
+    height: 700px;
+}
+
+
+#description{
+   width: 320px;
+  margin: 0 auto;
+  padding: 4px;
+  font-size: 14px;
+  
+}
+
+
+
+
+.nextQuestionButton, .previousButton{
+  background-color: #efefef;
+ 
+  text-align: center;
+  font-size: 13px;
+ 
+}
+
+.buttonDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+}
+
+
+@media screen and (max-width: 320px) {
+  .card{
+
+    margin: 100px auto .5em;
+
+    width: 310px;
+    height: 720px;
+}
+
+
+#description{
+   width: 290px;
+  margin: 0 auto;
+  padding: 4px;
+  font-size: 13px;
+  
+}
+
+
+
+
+.nextQuestionButton, .previousButton{
+  background-color: #efefef;
+ 
+  text-align: center;
+  font-size: 13px;
+ 
+}
+
+.buttonDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+}
 
 
  
